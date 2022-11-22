@@ -1,0 +1,170 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body{
+    margin: 0;
+}
+
+main{
+    padding-top: 10%;
+}
+
+video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+/* Header/Menu*/
+
+.logo{
+	height: 50px;
+	width: auto;
+	float: right;
+}
+
+.Menu{
+	background-color: #000;
+	float: left;
+	width: 120px;
+}
+
+.Menu-palabra{
+	padding-left: 40px;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	position: relative;
+}
+
+nav ul a {
+	color: #fff;
+	text-decoration: none;
+	padding: 15px 20px;
+	display: block;
+}
+
+nav ul ul {
+	display: none;
+	background: #000;
+}
+
+nav ul li:hover ul {
+	display: block;
+	position: absolute;
+	text-align: left;
+}
+
+nav a:hover {
+	text-decoration: underline;
+	text-decoration-color: red;
+} 
+
+/* Carrusel */
+
+.carousel-wrapper {
+    height: 400px;
+    position: relative;
+    width: 800px;
+    display: block;
+    margin: 50px auto ;
+    border: 2px solid black;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .arrow{
+    border: solid rgb(255, 255, 255);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+  }
+  .arrow-prev {
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+  
+  }
+  .arrow-next {
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  
+  [id^= "item"] {
+    display: none;
+  }
+  .item-1 {
+    z-index: 2;
+    opacity: 1;
+    background: url('img/Goku-Facha.jpg');
+    background-size: cover;
+  }
+  .item-2 {
+    background: url('img/Goku-Facha.jpg');
+    background-size: cover;
+  }
+  .item-3 {
+    background: url('img/Goku-Facha.jpg');
+    background-size: cover;
+  }
+  
+  *:target ~ .item-1{
+    opacity: 0;
+  }
+  #item-1:target ~ .item-1 {
+    opacity: 1;
+  
+  }
+  #item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+    z-index: 3;
+    opacity: 1;
+  } 
+
+
+/* Footer */
+
+footer a{
+    float: right;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    padding-top: 5%;
+}
+
+/* Responsive */
+
+@media(max-width: 650px){
+    .carousel-wrapper {
+        height: 200px;
+        width: 400px;
+      }
+
+    main{
+        padding-top: 35%;
+    }
+    footer a{
+        padding-top: 30%;
+    }
+}
